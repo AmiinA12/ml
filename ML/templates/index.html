@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Prédiction de Turnover</title>
+</head>
+<body>
+    <table align="center" width="50%" cellspacing="10">
+        <tr>
+            <td colspan="2" align="center">
+                <h1>Prédiction de Turnover des Employés</h1>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <form action="/predict" method="post">
+                    <table width="100%">
+                        <tr>
+                            <td><label for="Age">Age :</label></td>
+                            <td><input type="number" name="Age" id="Age" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Department">Department :</label></td>
+                            <td><input type="text" name="Department" id="Department" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Job_Role">Job Role :</label></td>
+                            <td><input type="text" name="Job_Role" id="Job_Role" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Job_Satisfaction">Job Satisfaction :</label></td>
+                            <td><input type="number" name="Job_Satisfaction" id="Job_Satisfaction" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Monthly_Income">Monthly Income :</label></td>
+                            <td><input type="number" name="Monthly_Income" id="Monthly_Income" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Over_Time">Over Time :</label></td>
+                            <td><input type="text" name="Over_Time" id="Over_Time" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Total_Working_Years">Total Working Years :</label></td>
+                            <td><input type="number" name="Total_Working_Years" id="Total_Working_Years" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Years_At_Company">Years At Company :</label></td>
+                            <td><input type="number" name="Years_At_Company" id="Years_At_Company" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <button type="submit">Prédire</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+        </tr>
+        {% if prediction_text %}
+        <tr>
+            <td colspan="2" align="center">
+                <h3>{{ prediction_text }}</h3>
+            </td>
+        </tr>
+        {% endif %}
+    </table>
+</body>
+</html>
